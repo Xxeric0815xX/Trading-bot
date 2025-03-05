@@ -4,6 +4,8 @@
   "description": "StockSMC Trading Bot",
   "main": "index.js",
   "scripts": {
+  "postinstall": "npm install"
+}
     "start": "node index.js"
   },
   "dependencies": {}
