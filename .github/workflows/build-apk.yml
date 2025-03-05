@@ -19,7 +19,7 @@ jobs:
 
       - name: Installiere Abhängigkeiten
   run: |
-    cd app  # Falls dein Code in einem Unterordner liegt
+    cd app
     npm install
       
       - name: Baue die APK
