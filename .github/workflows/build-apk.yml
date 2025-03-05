@@ -18,9 +18,7 @@ jobs:
           node-version: '16'
 
       - name: Installiere Abhängigkeiten
-  run: |
-    cd app
-    npm install
+        run: npm install
       
       - name: Baue die APK
         run: |
