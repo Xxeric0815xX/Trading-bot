@@ -20,9 +20,13 @@ jobs:
       - name: Installiere Abhängigkeiten
         run: npm install
       
-      - name: Baue die App
-        run: echo "Kein Android-Projekt          erkannt. Überspringe Build."
       
+      - name: Speichere APK als Artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: app-release
+    path: android/app/build/outputs/apk/release/app-release.apk
+
       - name: Speichere APK als Artifact
   uses: actions/upload-artifact@v4
   with:
