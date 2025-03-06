@@ -23,3 +23,6 @@ jobs:
         with:
           name: app-release
           path: android/app/build/outputs/apk/release/app-release.apk
+
+- name: Teste Android-Verzeichnis
+  run: ls -la
