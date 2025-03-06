@@ -1,17 +1,10 @@
-name: Build Android APK
-
-on:
-  push:
-    branches:
-      - main  # Baut die APK automatisch, wenn Änderungen auf 'main' gepusht werden
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Repository klonen
         uses: actions/checkout@v2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -19,16 +12,14 @@ jobs:
 
       - name: Installiere Abhängigkeiten
         run: npm install
-      
-      
-      - name: Speichere APK als Artifact
-  uses: actions/upload-artifact@v4
-  with:
-    name: app-release
-    path: android/app/build/outputs/apk/release/app-release.apk
+
+      - name: Baue die APK
+        run: |
+          cd android
+          ./gradlew assembleRelease
 
       - name: Speichere APK als Artifact
-  uses: actions/upload-artifact@v4
-  with:
-    name: app-release
-    path: android/app/build/outputs/**/*.apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: android/app/build/outputs/apk/release/app-release.apk
