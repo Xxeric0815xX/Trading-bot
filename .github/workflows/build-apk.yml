@@ -23,14 +23,8 @@ jobs:
       - name: Baue die App
         run: echo "Kein Android-Projekt          erkannt. Überspringe Build."
       
-      - name: APK speichern
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-apk
-          path: android/app/build/outputs/apk/release/
-
-- name: Speichere APK als Artifact
+      - name: Speichere APK als Artifact
   uses: actions/upload-artifact@v4
   with:
     name: app-release
-    path: android/app/build/outputs/apk/release/app-release.apk
+    path: android/app/build/outputs/**/*.apk
