@@ -13,11 +13,6 @@ jobs:
       - name: Installiere Abhängigkeiten
         run: npm install
 
-      - name: Baue die APK
-        run: |
-          cd android
-          ./gradlew assembleRelease
-
       - name: Speichere APK als Artifact
         uses: actions/upload-artifact@v4
         with:
